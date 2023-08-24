@@ -1,1 +1,22 @@
-
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>katsutakaサイト</title>
+        <link rel="icon" type="image/png" href="/img/icon.png">
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            $(function () {
+                $(".load_header").load("/include/header.html");
+            });
+        </script>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header class="load_header"></header>
+        <div id="firework_background"></div>
+    </body>
+    <script src="/index.js"></script>
+</html>
