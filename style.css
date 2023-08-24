@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
+
+@keyframes star-animation {
+    0%{
+        visibility: visible;
+        opacity: 100%;
+        filter: brightness(0);
+    } 10% {
+        opacity: 100%;
+        filter: brightness(0.5);
+        transform: rotateZ(0deg);
+    } 70% {
+        transform: rotateZ(360deg);
+        filter:brightness(10);
+    } 80% {
+        transform: scale(1);
+        filter: brightness(1);
+    } 90%{
+        transform: scale(1.3);
+    } 100% {
+        transform: scale(0);
+        filter: brightness(0);
+        opacity: 100%;
+        display: none;
+    }
+}
+
+.load_header{
+    width: 100vw;
+    position: absolute;
+    box-shadow: 0px 0px 10px 10px gray;
+    background-color: aqua;
+    z-index: 999999;
+    display: flex;
+    > a.title{
+        text-decoration-line: none;
+        display: inline-block;
+        color: blue;
+        padding-left: 20px;
+        transition-property: text-shadow;
+        transition-duration: 0.5s;
+        &:hover{
+            text-shadow: 5px 5px 5px gray;
+        }
+    }
+}
+
+#firework_background{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+    > div{
+        background-image: url(/img/star.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+    }
+}
+.flash{
+    animation: star-animation 2s normal;
+}
+
+
+html{
+    font-family: "Sawarabi Mincho", sans-serif;
+}
+body {
+    margin: 0px 0px 0px 0px;
+}
