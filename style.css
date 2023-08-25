@@ -50,13 +50,27 @@
     height: 100vh;
     background-color: black;
     overflow: hidden;
-    > div{
+    > div.star{
         background-image: url(/img/star.png);
         background-repeat: no-repeat;
         background-size: cover;
-        width: 15px;
-        height: 15px;
+        width: 10px;
+        height: 10px;
         position: absolute;
+    }
+    > div.firework{
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        > div.tip{
+            width: 15px;
+            height: 15px;
+            background-image: url(/img/tip.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            overflow: hidden;
+        }
     }
 }
 .flash{
