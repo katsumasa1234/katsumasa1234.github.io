@@ -1,8 +1,9 @@
 var cycleCountValue = 1000;
-var starCountValue = 10;
 var starCountMin = 10;
-var fireTipsValue = 20;
-var fireTipsMin = 50;
+var starCountValue = 10;
+var maxFireWorkCount = 3;
+var fireTipsMin = 20;
+var fireTipsValue = 10;
 var fireTipsSpeedValue = 300;
 
 var div = document.getElementById("firework_background");
@@ -61,7 +62,7 @@ function flashStar() {
 }
 
 function clickDiv(event) {
-    if (fireworks.length >= 3) return;
+    if (fireworks.length >= maxFireWorkCount) return;
     var firework = document.createElement("div");
     var fireTipCount = Math.floor(Math.random() * fireTipsValue) + fireTipsMin;
 
@@ -103,8 +104,6 @@ function flashFirework() {
             fireworks[i].tips[j].style.left = left + Math.cos(Math.PI / 180 * vector) * speed * 0.005 + "px";
 
             fireworks[i].tips[j].speed--;
-
-            console.log(top);
             
             if (speed < 0) {
                 fireworks[i].tips[j].style.display = "none";
@@ -116,6 +115,16 @@ function flashFirework() {
             fireworks.splice(i,1);
         }
     }
+}
+
+function settingChange() {
+    cycleCountValue = parseInt(document.getElementById("cycle").value);
+    starCountMin = parseInt(document.getElementById("starMin").value);
+    starCountValue = parseInt(document.getElementById("starValue").value);
+    maxFireWorkCount = parseInt(document.getElementById("fireworkCount").value);
+    fireTipsMin = parseInt(document.getElementById("fireTipMin").value);
+    fireTipsValue = parseInt(document.getElementById("fireTipValue").value);
+    fireTipsSpeedValue = parseInt(document.getElementById("fireTipSpeedValue").value);
 }
 
 
