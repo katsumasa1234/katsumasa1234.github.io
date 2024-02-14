@@ -1,19 +1,19 @@
-var cycleCountValue = 1000;
-var starCountMin = 10;
-var starCountValue = 10;
-var maxFireWorkCount = 3;
-var fireTipsMin = 20;
-var fireTipsValue = 10;
-var fireTipsSpeedValue = 300;
+let cycleCountValue = 1000;
+let starCountMin = 10;
+let starCountValue = 10;
+let maxFireWorkCount = 3;
+let fireTipsMin = 20;
+let fireTipsValue = 10;
+let fireTipsSpeedValue = 300;
 
-var div = document.getElementById("firework_background");
-var divSize = new Object();
+let div = document.getElementById("firework_background");
+let divSize = {};
 
-var loopCount = cycleCountValue;
-var starCount = 0;
-var stars = [];
-var olders = [];
-var fireworks = [];
+let loopCount = cycleCountValue;
+let starCount = 0;
+let stars = [];
+let olders = [];
+let fireworks = [];
 
 div.addEventListener("click",clickDiv);
 
@@ -36,13 +36,14 @@ function getSize() {
 }
 
 function replace() {
-    for (var i = 0; i < olders.length; i++) {
+    let i;
+    for (i = 0; i < olders.length; i++) {
         olders[i].remove();
     }
     olders = stars;
     stars = [];
     starCount = Math.floor(Math.random() * starCountValue + starCountMin);
-    for (var i = 0; i < starCount; i++) {
+    for (i = 0; i < starCount; i++) {
         stars.push(document.createElement("div"));
         stars[i].style.top = Math.floor(Math.random() * divSize.height) - 20 + "px";
         stars[i].style.left = Math.floor(Math.random() * divSize.width) - 20 + "px";
@@ -55,7 +56,7 @@ function replace() {
 
 function flashStar() {
     for (var i = 0; i < stars.length; i++) {
-        if (stars[i].showTime == loopCount) {
+        if (stars[i].showTime === loopCount) {
             stars[i].classList.add("flash");
         }
     }
@@ -110,7 +111,7 @@ function flashFirework() {
                 count ++;
             }
         }
-        if (count == fireworks[i].tips.length) {
+        if (count === fireworks[i].tips.length) {
             fireworks[i].remove();
             fireworks.splice(i,1);
         }
