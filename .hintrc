@@ -8,6 +8,7 @@
       {
         "html-lang-valid": "off"
       }
-    ]
+    ],
+    "disown-opener": "off"
   }
 }
