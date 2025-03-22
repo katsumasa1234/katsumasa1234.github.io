@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
+
+.load_header{
+    width: 100vw;
+    background-color: rgb(19, 236, 236);
+    > a.title{
+        text-decoration-line: none;
+        display: inline-block;
+        color: rgb(20, 20, 228);
+        padding-left: 20px;
+        transition-property: text-shadow;
+        transition-duration: 0.5s;
+        &:hover{
+            text-shadow: 5px 5px 5px gray;
+        }
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 400px;
+        height: 100%;
+        background-color: #00000083;
+        transition: 0.4s;
+        z-index: 1;
+        overflow-y: auto;
+
+        h1 {
+            padding-top: 20px;
+            margin: 20px;
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        h1::after {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: white;
+            bottom: -1px;
+            content: "";
+            left: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 20px;
+        }
+
+        ul li a {
+            position: relative;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            display: block;
+            padding: 10px 0;
+        }
+
+        ul li a::after {
+            position: absolute;
+            left: 0;
+            content: "";
+            width: 100%;
+            height: 1px;
+            background: white;
+            bottom: -1px;
+            transform: scale(0, 1);
+            transform-origin: left top;
+            transition: transform 0.3s;
+        }
+
+        ul li a:hover::after {
+            transform: scale(1, 1);
+        }
+    }
+
+    #drawer {
+        display: none;
+    }
+    #drawer:checked ~ .menu {
+        right: 0;
+    }
+    #drawer:checked ~ .menu-button .bar:nth-child(1) {
+        transform: rotate(45deg) translate(-2px, 4px);
+    }
+    #drawer:checked ~ .menu-button .bar:nth-child(2) {
+        opacity: 0;
+    }
+    #drawer:checked ~ .menu-button .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -14px);
+    }
+    #drawer:checked ~ .menu-button .bar {
+        background: white;
+    }
+    #drawer:not(:checked) ~ .menu-button:hover .bar {
+        box-shadow: 5px 5px 5px gray;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 4px;
+        margin: 5px 0;
+        background-color: rgb(20, 20, 228);
+        transition: 0.4s;
+    }
+
+    .menu-button {
+        display: block;
+        position: fixed;
+        top: 30px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 2;
+    }
+}
+
+.load_footer{
+    width: 100vw;
+    height: auto;
+    background-color: gray;
+    position: relative;
+    bottom: 0;
+    text-align: center;
+}
+
+html{
+    font-family: "Sawarabi Mincho", sans-serif;
+}
+
+body {
+    margin: 0px 0px 0px 0px;
+    display: grid;
+}
+
+main{
+    min-height: 100vh;
+    height: auto;
+    margin: 0px;
+    text-align: center;
+}
+
+article{
+    margin: 50px 20% 50px 20%
+}
+
+.title:after{
+    content: "";
+    display: block;
+    height: 4px;
+    background: linear-gradient(to right, rgb(19, 236, 236), transparent);
+}
+
+.image{
+    width: 100%;
+}
