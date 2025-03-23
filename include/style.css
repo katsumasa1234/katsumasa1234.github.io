@@ -142,7 +142,7 @@ main{
 }
 
 article{
-    margin: 50px 20% 50px 20%
+    margin: 50px 20% 50px 20%;
 }
 
 .title:after{
@@ -153,5 +153,13 @@ article{
 }
 
 .image{
-    width: 100%;
+    position: relative;
+    max-width: 100%;
+    max-height: 50vh;
+}
+
+@media (max-width: 800px) {
+    article {
+        margin: 50px 5% 50px 5%;
+    }
 }
